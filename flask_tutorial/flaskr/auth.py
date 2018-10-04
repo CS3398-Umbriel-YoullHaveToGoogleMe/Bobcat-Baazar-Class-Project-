@@ -12,8 +12,8 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 @bp.route('/register', methods=('GET', 'POST'))
 def register():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
+        username = request.form['uname']
+        password = request.form['pass']
         db = get_db()
         error = None
 

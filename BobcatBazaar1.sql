@@ -16,4 +16,3 @@ create table Postings (
         Location			varchar(55) not null,
         Description		TEXT not null
 );
-

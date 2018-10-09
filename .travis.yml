@@ -7,7 +7,7 @@ install:
   - pip install flask
 
 before_script:
-  - env FLASK_APP=flaskr
+  - export FLASK_APP=flaskr
   - flask init-db
 
 script: flask run

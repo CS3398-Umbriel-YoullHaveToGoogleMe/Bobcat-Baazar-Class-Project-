@@ -9,5 +9,5 @@ install:
 before_script:
   - export FLASK_APP=Bobcat_Bazaar/flaskr
   - flask init-db
-  - export FLASK_ENV=development flask run
+  - export FLASK_ENV=development
 script: flask run

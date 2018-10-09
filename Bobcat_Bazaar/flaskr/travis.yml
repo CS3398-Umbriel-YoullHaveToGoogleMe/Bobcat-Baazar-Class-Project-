@@ -11,7 +11,5 @@ python:
   - "3.7-dev"  # 3.7 development branch
 # command to install dependencies
 install:
-  - pip install -r requirements.txt
-# command to run tests
-script:
-  - python auth.py
+  - pip install unittest2
+script: python auth.py

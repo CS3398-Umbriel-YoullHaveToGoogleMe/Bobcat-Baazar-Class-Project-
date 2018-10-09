@@ -8,7 +8,7 @@ from flaskr.db import get_db
 
 bp = Blueprint('blog', __name__)
 
-@bp.route('/')
+@bp.route('/index')
 def index():
     db = get_db()
     posts = db.execute(

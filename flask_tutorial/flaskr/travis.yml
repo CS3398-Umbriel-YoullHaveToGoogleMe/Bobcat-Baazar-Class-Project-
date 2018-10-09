@@ -12,3 +12,4 @@ python:
 # command to install dependencies
 install:
   - pip install unittest2
+script: python auth.py

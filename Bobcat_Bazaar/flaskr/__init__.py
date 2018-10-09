@@ -9,6 +9,8 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
+    #We use __name__ so that we can get the name of the current Python module
+
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -17,11 +19,16 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
+    #Secret Key is used and is default set to 'dev'
+    #Change this setting before fully deploying the project
+
     # ensure the instance folder exists
+    #This is where the SQLite database file will be saved.
     try:
         os.makedirs(app.instance_path)
     except OSError:
         pass
+
 
     # a simple page that says hello
     @app.route('/hello')

@@ -28,7 +28,7 @@ def register():
 
         if error is None:
             db.execute(
-                'INSERT INTO Users (Username, Password) VALUES (?, ?)',
+                'INSERT INTO user (username, password) VALUES (?, ?)',
                 (username, generate_password_hash(password))
             )
             db.commit()
@@ -46,12 +46,12 @@ def login():
         db = get_db()
         error = None
         user = db.execute(
-            'Select * FROM Users WHERE Username = ?', (username,)
+            'Select * FROM user WHERE username = ?', (username,)
         ).fetchone()
 
         if user is None:
             error = 'Incorrect username.'
-        elif not check_password_hash(user['Password'], password):
+        elif not check_password_hash(user['password'], password):
             error = 'Incorrect password.'
 
         if error is None:

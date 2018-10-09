@@ -1,0 +1,13 @@
+language: python
+python:
+  - "3.6"
+
+# command to install dependencies
+install:
+  - pip install flask
+
+before_script:
+  - export FLASK_APP=Bobcat_Bazaar/flaskr
+  - flask init-db
+  - export FLASK_ENV=development
+script: flask run

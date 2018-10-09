@@ -41,7 +41,7 @@ def create():
             db.commit()
             return redirect(url_for('blog.index'))
 
-    return render_template('bloc/create.html')
+    return render_template('blog/create.html')
 
 def get_post(id, check_author=True):
     post = get_db().execute(

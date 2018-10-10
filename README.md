@@ -48,9 +48,8 @@ Do the commands in the terminal or cmd.
 To veiw the front end of the application.
 To view the HTML files created. Navigate to "HTML files" folder
 
-
-
-
+To view the database files of our applictiion.
+Navigate to Bobcat_Bazaar/flaskr/BobcatBazaar1.sql
 
 	
 

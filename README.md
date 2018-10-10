@@ -52,5 +52,15 @@ To view the database files of our applictiion.
 Navigate to Bobcat_Bazaar/flaskr/BobcatBazaar1.sql
 
 	
+Back End Next Sprint:
+(Steven Hernandez and Salvador Romero)
+Main Goal: Combine front and back end.
+and continue development.
+
+We will need to learn more of the flask
+web framework and get more familiar with it.
+Learning how to replace the stock html pages 
+that the Flask tutorial provided with our own 
+html pages. 
 
 	

@@ -8,6 +8,10 @@ def hello():
 
 @app.route('/')
 def login():
+    return render_template('login.html')
+
+@app.route('/', methods=['POST','GET'])
+def login_post():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
@@ -18,3 +22,7 @@ def login():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+@app.route('/buy')
+def buy():
+    return render_template('buy.html')

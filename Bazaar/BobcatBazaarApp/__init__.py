@@ -27,6 +27,6 @@ def home():
 def buy():
     return render_template('buy.html')
 
-@app.route('/regsiter')
-def buy():
-	return render_template('register.html')
+#@app.route('/register')
+#def buy():
+#	return render_template('register.html')

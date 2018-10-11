@@ -1,0 +1,8 @@
+<form method="post">
+    <label for="username">Create username  </label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Create password  </label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Register">
+</form>
+<a href="{{ url_for('login') }}">Already Registered?</a>

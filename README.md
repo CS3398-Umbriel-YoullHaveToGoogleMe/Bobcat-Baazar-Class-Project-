@@ -61,6 +61,15 @@ We will need to learn more of the flask
 web framework and get more familiar with it.
 Learning how to replace the stock html pages 
 that the Flask tutorial provided with our own 
-html pages. 
+html pages.
+
+Front End Next Sprint:
+(Nabil Manasiya and Matt Stephens)
+Main Goal: Make HTML pages more interactive and user
+friendly by adding appropriate components and design to it.
+Research and insert appropraite javascript to make 
+HTML pages interact with the back end code.
+Learn about Jinja2 templates which will help us 
+render our data from back end to the front end and vice versa. 
 
 	

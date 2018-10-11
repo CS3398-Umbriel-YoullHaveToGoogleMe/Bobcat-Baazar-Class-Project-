@@ -58,11 +58,6 @@ def home():
 def buy():
     return render_template('buy.html')
 
-<<<<<<< HEAD
-#@app.route('/register')
-#def buy():
-#	return render_template('register.html')
-=======
 @app.route('/register')
 def register():
     return render_template('register.html')
@@ -95,4 +90,3 @@ def register_post():
         flash(error)
 
     return render_template('register.html')
->>>>>>> 2af21d9ec8def6bcc0168b07a57a524bdbf85eb8

@@ -46,10 +46,10 @@ li a:hover:not(.active) {
 	<ul style="padding-top:10px;">
 	  <li><a class="active" href="#home">Home</a></li>
 	  <li><a href="{{ url_for('buy') }}">Buy</a></li>
-	  <li><a href="Sell_Page.html">Sell</a></li>
-	  <li><a href="Profile.html">Manage Profile</a></li>
-	  <li><a href="Messages.html">Visit Messages</a></li>
-	  <li><a href="#logout">Logout</a></li>
+	  <li><a href="{{ url_for('sell') }}">Sell</a></li>
+	  <li><a href="{{ url_for('profile') }}">Manage Profile</a></li>
+	  <li><a href="{{ url_for('messages') }}">Visit Messages</a></li>
+	  <li><a href="{{ url_for('login') }}">Logout</a></li>
 	</ul>
 	<div style="margin-left:4%;padding:1px 16px;height:100px;">
 		<h2 style="text-align:center;"> <b>Welcome to Bobcat Book Bazaar!</b></h2>

@@ -1,6 +1,17 @@
+<<<<<<< HEAD
 <from method="post">
 	<input type="text" name="firstName" id="firstName" required>
 	<input type="text" name="lastName"	id="lastName" required>
 	<input type="text" name="email" id="email" required>
 	<input type="submit" value="Register">
 </from>
+=======
+<form method="post">
+    <label for="username">Create username  </label>
+    <input type="text" name="username" id="username" required>
+    <label for="password">Create password  </label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Register">
+</form>
+<a href="{{ url_for('login') }}">Already Registered?</a>
+>>>>>>> 2af21d9ec8def6bcc0168b07a57a524bdbf85eb8

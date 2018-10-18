@@ -43,7 +43,7 @@ def login_post():
 
         if error is None:
             session.clear()
-            session['user_id'] = user['id']
+            session['user_id'] = user['username']
             return redirect(url_for('home'))
 
         flash(error)
@@ -101,3 +101,14 @@ def register_post():
         flash(error)
 
     return render_template('register.html')
+
+@app.before_request
+def load_logged_in_user():
+    user_id = session.get('user_id')
+
+    if user_id is None:
+        g.user = None
+    else:
+        g.user = get_db().execute(
+            'SELECT * FROM user WHERE username = ?', (user_id,)
+        ).fetchone()

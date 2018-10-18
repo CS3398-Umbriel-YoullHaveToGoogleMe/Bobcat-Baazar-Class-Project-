@@ -1,4 +1,5 @@
 import os
+import time
 from flask import Flask, render_template, request, redirect, url_for, flash, g, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from BobcatBazaarApp.db import get_db
@@ -49,6 +50,16 @@ def login_post():
         flash(error)
 
     return render_template('login.html')
+
+@app.route('/logout')
+def logout():
+    return render_template('logout.html')
+
+@app.route('/logout')
+def logout_post():
+    session.clear()
+    time.sleep(2)
+    return redirect(url_for('login'))
 
 @app.route('/home')
 def home():

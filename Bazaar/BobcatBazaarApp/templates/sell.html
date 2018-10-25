@@ -4,6 +4,63 @@
     <meta charset="UTF-8">
     <title>Sell</title>
 <style>
+    input[type=text]{
+	    width:45%;
+		border:2px solid maroon;
+		border-radius:4px;
+		margin:8px 0;
+		outline:none;
+		padding:8px;
+		box-sizing:border-box;
+		transition:.3s;
+	}
+	input[type=text]:focus{
+	    border-color:dodgerBlue;
+		box-shadow:0 0 8px 0 dodgerBlue;
+	}
+    textarea{
+	    width:45%;
+		border:2px solid maroon;
+		border-radius:4px;
+		margin:8px 0;
+		outline:none;
+		padding:8px;
+		box-sizing:border-box;
+		transition:.3s;
+	}
+	textarea:focus{
+	    border-color:dodgerBlue;
+		box-shadow:0 0 8px 0 dodgerBlue;
+	}
+	select{
+	    width:45%;
+		border:2px solid maroon;
+		border-radius:4px;
+		margin:8px 0;
+		outline:none;
+		padding:8px;
+		box-sizing:border-box;
+		transition:.3s;
+	}
+	select:focus{
+	    border-color:dodgerBlue;
+		box-shadow:0 0 8px 0 dodgerBlue;
+	}
+	button{
+	    color:maroon;
+	    font-family: "proxima nova";
+		font-weight:100;
+		font-size:20px;
+		border: solid 2px maroon;
+		background-color: white;
+		border-radius: 50px;
+		padding: 10px 50px;	
+	}
+	button:hover{
+	    background-color: maroon;
+		color:#fff;
+	}
+
 	body {
     margin: 0;
 }
@@ -40,7 +97,7 @@ li a:hover:not(.active) {
 <body>
 
 	<div>
-		<h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:30px">Bobcat Book Bazaar</h1>
+		<h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:40px; margin:0;">Bobcat Book Bazaar</h1>
 		<ul style="padding-top:10px;">
 		  <li><a class="active" href="#home">Home</a></li>
 		  <li><a href="{{ url_for('buy') }}">Buy</a></li>
@@ -50,19 +107,25 @@ li a:hover:not(.active) {
 		  <li><a href="{{ url_for('logout') }}">Logout</a></li>
 			</ul>
 	</div>
-	<div style="margin-left:250px;">
-		*Please select the appropriate categories:
-		(This will be the beginning of the drop-down menus)
+	<div style="margin-left:400px; margin-top:20px;">
+		<div style="margin-left:50px; margin-top:25px;">
+		    <b>Please fill out the following information for this post:</b><br><br>
+			<b>Book name:</b> 
+			<br><input type="text" name="BookName" placeholder="Book Name" Required><br><br>
+			<b>Book Description:</b> 
+			<br><textarea placeholder="Enter book description"></textarea><br><br>
+			<b>Book Price:</b> 
+			<br><input type="text" name="Price" placeholder="Price" Required><br><br>
+			<b>Select Department:</b><br>
+			<select name="my_html_select_box">
+				<option>Computer Science </option>
+				<option>MIS</option>
+				<option>Engineering</option>
+				<option>Mathematics</option>
+			</select>
 			<br><br>
-		Please fill out any other information you can provide for this post:
-		(This will be a list of text fields)
-			<br><br>
-		After the required info is filled out, they can hit a 'Post' button that takes
-		them to their active posts.
-		<br><br>
+			<button>Post</button>
+		</div>
 	</div>
-
-
-<button type="button">Post</button>
 </body>
 </html>

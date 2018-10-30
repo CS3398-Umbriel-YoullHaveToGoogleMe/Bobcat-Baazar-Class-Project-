@@ -6,4 +6,4 @@ python:
 install:
   - pip install flask
 
-script: python BobcatBazaarApp.py
+script: python Bazaar_App/BobcatBazaarApp.py

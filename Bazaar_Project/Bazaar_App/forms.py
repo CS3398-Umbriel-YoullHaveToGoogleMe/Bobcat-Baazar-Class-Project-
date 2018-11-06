@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, SelectField
 from wtforms.validators import DataRequired, Length, EqualTo
 
 class RegistrationForm(FlaskForm):
@@ -18,5 +18,17 @@ class LoginForm(FlaskForm):
 	netID = StringField('netID',
 						validators=[DataRequired()])
 	password = PasswordField('Password', validators=[DataRequired()])
-	remember = BooleanField('Remember Me')
+	#remember = BooleanField('Remember Me')
 	submit = SubmitField('Login')
+
+class SellForm(FlaskForm):
+	book_name = StringField('Book Name',
+							validators=[DataRequired()])
+	book_description = StringField('book Description',
+							validators=[DataRequired()])
+	price = StringField('Price',
+						validators=[DataRequired()])
+	college = SelectField('College',
+						choices=[('CS', 'Computer Science'), ('MIS', 'MIS'),
+								 ('EN', 'Engineering'), ('MATH', 'Mathematics')])
+	submit = SubmitField('Post')

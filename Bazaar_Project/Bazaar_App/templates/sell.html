@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sell</title>
+<style>
+    input[type=text]{
+	    width:45%;
+		border:2px solid maroon;
+		border-radius:4px;
+		margin:8px 0;
+		outline:none;
+		padding:8px;
+		box-sizing:border-box;
+		transition:.3s;
+	}
+	input[type=text]:focus{
+	    border-color:dodgerBlue;
+		box-shadow:0 0 8px 0 dodgerBlue;
+	}
+    textarea{
+	    width:45%;
+		border:2px solid maroon;
+		border-radius:4px;
+		margin:8px 0;
+		outline:none;
+		padding:8px;
+		box-sizing:border-box;
+		transition:.3s;
+	}
+	textarea:focus{
+	    border-color:dodgerBlue;
+		box-shadow:0 0 8px 0 dodgerBlue;
+	}
+	select{
+	    width:45%;
+		border:2px solid maroon;
+		border-radius:4px;
+		margin:8px 0;
+		outline:none;
+		padding:8px;
+		box-sizing:border-box;
+		transition:.3s;
+	}
+	select:focus{
+	    border-color:dodgerBlue;
+		box-shadow:0 0 8px 0 dodgerBlue;
+	}
+	button{
+	    color:maroon;
+	    font-family: "proxima nova";
+		font-weight:100;
+		font-size:20px;
+		border: solid 2px maroon;
+		background-color: white;
+		border-radius: 50px;
+		padding: 10px 50px;	
+	}
+	button:hover{
+	    background-color: maroon;
+		color:#fff;
+	}
+
+	body {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 17%;
+    background-color: #f1f1f1;
+    position: absolute;
+    height: 100%;
+    overflow: auto;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+	<div>
+		<h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:40px; margin:0;">Bobcat Book Bazaar</h1>
+		<ul style="padding-top:10px;">
+		  <li><a class="active" href="{{ url_for('home', username=username) }}">Home</a></li>
+		  <li><a href="{{ url_for('buy', username=username) }}">Buy</a></li>
+		  <li><a href="{{ url_for('sell', username=username) }}">Sell</a></li>
+		  <li><a href="{{ url_for('profile', username=username) }}">Manage Profile</a></li>
+		  <li><a href="{{ url_for('messages', username=username) }}">Visit Messages</a></li>
+		  <li><a href="{{ url_for('logout') }}">Logout</a></li>
+			</ul>
+	</div>
+	<div style="margin-left:400px; margin-top:20px;">
+		<div style="margin-left:50px; margin-top:25px;">
+			<form method="Post">
+				{{ form.csrf_token }}
+		    	<b>Please fill out the following information for this post:</b><br><br>
+		    	<b>{{ form.book_name.label() }}:</b>
+				<br>{{ form.book_name() }}<br><br>
+				<b>{{ form.book_description.label() }}:</b> 
+				<br>{{ form.book_description() }}<br><br>
+				<b>{{ form.price.label() }}:</b> 
+				<br>{{ form.price() }}<br><br>
+				<b>{{ form.college.label() }}:</b><br>
+				{{ form.college() }}
+				<br><br>
+				{{ form.submit() }}
+			</form>
+		</div>
+	</div>
+</body>
+</html>

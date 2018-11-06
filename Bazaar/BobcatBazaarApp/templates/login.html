@@ -1,8 +1,12 @@
-<form method="post">
-    <label for="username">Username  </label>
-    <input type="text" name="username" id="username" required>
+<form method="Post" action = "/register">
+    <label for="username">Firstname  </label>
+    <input type="text" name="Fname" id="username" required>
+	<label for="username">Lastname  </label>
+    <input type="text" name="Lname" id="username" required>
+	<label for="username">Netid  </label>
+    <input type="text" name="netid" id="username" required>
     <label for="password">Password  </label>
     <input type="password" name="password" id="password" required>
-    <input type="submit" value="Login">
+    <input type="submit" value="temp register">
 </form>
 <a href="{{ url_for('register') }}">Not Registered?</a>

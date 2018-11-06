@@ -54,7 +54,7 @@
 		border: solid 2px maroon;
 		background-color: white;
 		border-radius: 50px;
-		padding: 10px 50px;	
+		padding: 10px 50px;
 	}
 	button:hover{
 	    background-color: maroon;
@@ -110,21 +110,41 @@ li a:hover:not(.active) {
 	<div style="margin-left:400px; margin-top:20px;">
 		<div style="margin-left:50px; margin-top:25px;">
 		    <b>Please fill out the following information for this post:</b><br><br>
-			<b>Book name:</b> 
-			<br><input type="text" name="BookName" placeholder="Book Name" Required><br><br>
-			<b>Book Description:</b> 
-			<br><textarea placeholder="Enter book description"></textarea><br><br>
-			<b>Book Price:</b> 
-			<br><input type="text" name="Price" placeholder="Price" Required><br><br>
-			<b>Select Department:</b><br>
-			<select name="my_html_select_box">
-				<option>Computer Science </option>
-				<option>MIS</option>
-				<option>Engineering</option>
-				<option>Mathematics</option>
-			</select>
-			<br><br>
-			<button>Post</button>
+            <form method="Post" action="/sell">
+                <b>College:</b><br>
+                <select name="college">
+                    <option>Applied Arts</option>
+                    <option>McCoy College of Business Administration</option>
+                    <option>Education</option>
+                    <option>Fine Arts and Communication</option>
+                    <option>Health Professions</option>
+                    <option>Liberal Arts</option>
+                    <option>Science and Engineering</option>
+                    <option>University College</option>
+                    <option>Graduate College</option>
+                </select>
+                <br>
+                <b>Select Department:</b><br>
+                <select name="department">
+                    <option>Computer Science </option>
+                    <option>MIS</option>
+                    <option>Engineering</option>
+                    <option>Mathematics</option>
+                </select>
+                <br><b>Book name:</b>
+                <br><input type="text" name="BookName" placeholder="Book Name" Required><br>
+                <b>Course Id:</b>
+                <br><input type="text" name="CourseId" placeholder="CourseId" Required><br>
+                <b>Payment Method Accepted:</b><br>
+                <select name="pay_method">
+                    <option>Venmo</option>
+                    <option>Cash</option>
+                </select>
+                <br><b>Book Price:</b>
+                <br><input type="text" name="Price" placeholder="Price" Required><br><br>
+                <br><br>
+                <button>Post</button>
+            </form>
 		</div>
 	</div>
 </body>

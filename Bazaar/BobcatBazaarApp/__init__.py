@@ -1,75 +1,53 @@
 import os
-import time
 from flask import Flask, render_template, request, redirect, url_for, flash, g, session
 from werkzeug.security import check_password_hash, generate_password_hash
-from BobcatBazaarApp.db import get_db
+#from BobcatBazaarApp.db import get_db
+from flask_pymongo import PyMongo
+import bcrypt
 
 app = Flask(__name__, instance_relative_config=True)
-app.config.from_mapping(
-    SECRET_KEY='dev',
-    DATABASE=os.path.join(app.instance_path, 'BobcatBazaarApp.sqlite'),
-)
+app.config['MONGO DBNAME'] = 'bobcatbaazar'
+app.config['MONGO_URI'] = 'mongodb://bobcat:bobcat2018@ds127843.mlab.com:27843/bobcatbaazar'
 
-try:
-    os.makedirs(app.instance_path)
-except OSError:
-    pass
+mongo = PyMongo(app)
 
-from . import db
-db.init_app(app)
 
-@app.route('/hello')
-def hello():
-    return 'Hello World!'
-
-@app.route('/')
-def login():
-    return render_template('login.html')
 
 @app.route('/', methods=['POST','GET'])
-def login_post():
+def index():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        db = get_db()
-        error = None
-        user = db.execute(
-            'SELECT * FROM user WHERE username = ?', (username,)
-        ).fetchone()
+        user = mongo.db.users
+        login_user = user.find_one({'NetId': request.form['netid']})
+        if login_user:
+            if bcrypt.hashpw(request.form['password'].encode('utf-8'), login_user['Password']) == login_user['Password']:
+                session['username'] = request.form['netid']
+                uname = login_user['First Name']
+                return redirect(url_for('home', username=uname))
+        error = 'Invalid Username or password combination'
+        return render_template('login1.html', error=error)
+    return render_template('login1.html')
 
-        if user is None:
-            error = 'Incorrect username.'
-        elif not check_password_hash(user['password'], password):
-            error = 'Incorrect password.'
-
-        if error is None:
-            session.clear()
-            session['user_id'] = user['username']
-            return redirect(url_for('home'))
-
-        flash(error)
-
-    return render_template('login.html')
-
-@app.route('/logout')
-def logout():
-    return render_template('logout.html')
-
-@app.route('/logout')
-def logout_post():
-    session.clear()
-    time.sleep(2)
-    return redirect(url_for('login'))
-
-@app.route('/home')
-def home():
-    return render_template('home.html')
+@app.route('/home/<username>')
+def home(username):
+    return render_template('home.html', uname=username)
 
 @app.route('/buy')
 def buy():
     return render_template('buy.html')
-@app.route('/sell')
+
+@app.route('/sell',  methods=['POST','GET'])
 def sell():
+    if request.method == 'POST':
+        Sell_Book = mongo.db.Sell_Books
+        college = request.form['college']
+        department = request.form['department']
+        b_name = request.form['BookName']
+        course_id = request.form['CourseId']
+        pay_method = request.form['pay_method']
+        price = request.form['Price']
+        netid = session['username']
+        Sell_Book.insert({'NetId': netid, 'College': college, 'Department': department, 'Book Name': b_name, 'Course_ID': course_id, 'Pay_Type': pay_method, 'Price': price})
+        return '<h1>Your book has been posted</h1>'
     return render_template('sell.html')
 
 @app.route('/profile')
@@ -80,46 +58,33 @@ def profile():
 def messages():
     return render_template('messages.html')
 
-@app.route('/register')
+@app.route('/logout')
+def logout():
+   session.pop('username', None)
+   return redirect(url_for('index'))
+
+@app.route('/register', methods =['GET','POST'])
 def register():
-    return render_template('register.html')
-
-@app.route('/register', methods=['POST', 'GET'])
-def register_post():
     if request.method == 'POST':
-        username = request.form['username']
-        password = request.form['password']
-        db = get_db()
-        error = None
-
-        if not username:
-            error = 'Username is required.'
-        elif not password:
-            error = 'Password is required.'
-        elif db.execute(
-                'SELECT id FROM user WHERE username = ?', (username,)
-        ).fetchone() is not None:
-            error = 'User {} is already registered.'.format(username)
-
-        if error is None:
-            db.execute(
-                'INSERT INTO user (username, password) VALUES (?, ?)',
-                (username, generate_password_hash(password))
-            )
-            db.commit()
-            return redirect(url_for('login'))
-
-        flash(error)
-
-    return render_template('register.html')
-
-@app.before_request
-def load_logged_in_user():
-    user_id = session.get('user_id')
-
-    if user_id is None:
-        g.user = None
+        user = mongo.db.users
+        existing_users = user.find_one({'NetId': request.form['netid']})
+        if existing_users is None:
+            password = request.form['password']
+            fname = request.form['Fname']
+            lname = request.form['Lname']
+            netid = request.form['netid']
+            pw_hash = bcrypt.hashpw((password).encode('utf-8'), bcrypt.gensalt())
+            user.insert({'First Name': fname, 'Last Name': lname, 'NetId': netid, 'Password': pw_hash})
+            return redirect(url_for('index'))
+        return 'That username already exist'
     else:
-        g.user = get_db().execute(
-            'SELECT * FROM user WHERE username = ?', (user_id,)
-        ).fetchone()
+        return render_template('register.html')
+
+
+if __name__ == '__main__':
+    app.secret_key = 'mysecret'
+    app.run(debug=True)
+
+
+
+

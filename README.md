@@ -66,12 +66,9 @@ html pages.
 
 Front End Next Sprint:
 (Nabil Manasiya and Matt Stephens)
-Main Goal: Make HTML pages more interactive and user
-friendly by adding appropriate components and design to it.
-Research and insert appropraite javascript to make 
-HTML pages interact with the back end code.
-Learn about Jinja2 templates which will help us 
-render our data from back end to the front end and vice versa. 
+Main Goal:For the next sprint we have to complete our basic requirements for our HTML pages such as, all the textboxes or labels
+that we need should be in place. Some of the HTML pages such as BUY and SELL should also be ready and designed completly. We are
+plannign to add all the necessary javascript to our files as our back end requires us to do.
 
 Back End Final Sprint:
 (Steven Hernandez and Salvador Romero)

@@ -76,6 +76,10 @@ Main Goal: Finish routing all of the pages together.
 Set up sessions so that we can keep track of users information during 
 the time they have logged in.
 
+Database Final Sprint:
+(Moiz Ahmed & Aadil Khatri)
+Main Goal: the Database team will assess and understand any and all additional requirements/features and develop the database with all the required data structures. Also, we need to design a more robust database schema after consulting with back-end. After all that, we need to make it connect to back-end smoothly with out any problems.
+
 Implementing SOLID principles:
 (discussion between team members)
 

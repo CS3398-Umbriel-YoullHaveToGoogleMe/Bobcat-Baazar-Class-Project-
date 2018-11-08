@@ -21,11 +21,13 @@ db.init_app(app)
 @app.route('/hello')
 def hello():
     return 'Hello World!'
-
+#default place the webpage will go to when we first start it up
 @app.route('/')
 def login():
     return render_template('login.html')
-
+#log in page will pop up when we first load the program too.
+#the page is of form POST becasue we will wwant to get the user input 
+#to store in the database like username and password.
 @app.route('/', methods=['POST','GET'])
 def login_post():
     if request.method == 'POST':

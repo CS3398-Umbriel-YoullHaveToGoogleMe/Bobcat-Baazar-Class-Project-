@@ -1,3 +1,4 @@
+ls
 # Bobcat-Baazar-Class-Project-
 Things to have before starting:
 python 3.6 
@@ -71,5 +72,22 @@ Research and insert appropraite javascript to make
 HTML pages interact with the back end code.
 Learn about Jinja2 templates which will help us 
 render our data from back end to the front end and vice versa. 
+
+Back End Final Sprint:
+(Steven Hernandez and Salvador Romero)
+Main Goal: Finish routing all of the pages together. 
+Set up sessions so that we can keep track of users information during 
+the time they have logged in.
+
+Implementing SOLID principles:
+(discussion between team members)
+
+Backend:
+There is a way to devide the file containing the implementation of the backend into seperate files. We decided to keep everything in a single file since there is not much code needed to connect the backend with the front end. Once we add more to the file then we will need to revisit the question on how to devide the file. 
+
+Front end:
+For the front end we devided each page in our website into a different file.
+
+
 
 	

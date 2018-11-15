@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        body {
+            margin: 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 17%;
+            background-color: #f1f1f1;
+            position: absolute;
+            height: 100%;
+            overflow: auto;
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Messages</title>
+</head>
+<body>
+
+<div>
+
+    <h1 style="text-align: center; color:goldenrod;
+        background-color:maroon;padding:30px">Bobcat Book Bazaar</h1>
+    <hr>
+    <hr>
+</div>
+<ul style="padding-top:10px;">
+    <li><a class="active" href="home.html">Home</a></li>
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="profile.html">Manage Profile</a></li>
+    <li><a href="messages.html">Visit Messages</a></li>
+    <li><a href="logout.html">Logout</a></li>
+</ul>
+
+<div style="margin-left:250px;">
+    This page can contain a list on the left side with all active chats.
+    <br><br>
+    The actual chats can be opened in popup windows.
+</div>
+
+
+</body>
+</html>

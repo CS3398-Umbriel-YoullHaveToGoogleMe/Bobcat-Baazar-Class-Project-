@@ -47,7 +47,7 @@ def sell():
         price = request.form['Price']
         netid = session['username']
         Sell_Book.insert({'NetId': netid, 'College': college, 'Department': department, 'Book Name': b_name, 'Course_ID': course_id, 'Pay_Type': pay_method, 'Price': price})
-        return '<h1>Your book has been posted</h1>'
+        return redirect(url_for('sell'))
     return render_template('sell.html')
 
 @app.route('/profile')

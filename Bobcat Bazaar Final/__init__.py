@@ -1,7 +1,4 @@
-import os
 from flask import Flask, render_template, request, redirect, url_for, flash, g, session
-from werkzeug.security import check_password_hash, generate_password_hash
-#from BobcatBazaarApp.db import get_db
 from flask_pymongo import PyMongo
 import bcrypt
 

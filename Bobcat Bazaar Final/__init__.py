@@ -26,11 +26,19 @@ def index():
 
 @app.route('/home/<username>')
 def home(username):
-    return render_template('home.html', uname=username)
+    if 'username' in session:
+        username = session['username']
+        return render_template('home.html', uname=username)
+    return "You are not logged in <br><a href='/'></b>" + \
+            "click here to log in</b></a>"
 
 @app.route('/buy')
 def buy():
-    return render_template('buy.html')
+    if 'username' in session:
+        username = session['username']
+        return render_template('buy.html')
+    return "You are not logged in <br><a href='/'></b>" + \
+           "click here to log in</b></a>"
 
 @app.route('/sell',  methods=['POST','GET'])
 def sell():
@@ -49,11 +57,19 @@ def sell():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    if 'username' in session:
+        username = session['username']
+        return render_template('profile.html')
+    return "You are not logged in <br><a href='/'></b>" + \
+           "click here to log in</b></a>"
 
 @app.route('/messages')
 def messages():
-    return render_template('messages.html')
+    if 'username' in session:
+        username = session['username']
+        return render_template('messages.html')
+    return "You are not logged in <br><a href='/'></b>" + \
+           "click here to log in</b></a>"
 
 @app.route('/logout')
 def logout():
@@ -76,7 +92,6 @@ def register():
         return 'That username already exist'
     else:
         return render_template('register.html')
-
 
 if __name__ == '__main__':
     app.secret_key = 'mysecret'

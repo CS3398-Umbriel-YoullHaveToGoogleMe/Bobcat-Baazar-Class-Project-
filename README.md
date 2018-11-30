@@ -1,3 +1,4 @@
+ls
 # Bobcat-Baazar-Class-Project-
 Things to have before starting:
 python 3.6 
@@ -65,11 +66,29 @@ html pages.
 
 Front End Next Sprint:
 (Nabil Manasiya and Matt Stephens)
-Main Goal: Make HTML pages more interactive and user
-friendly by adding appropriate components and design to it.
-Research and insert appropraite javascript to make 
-HTML pages interact with the back end code.
-Learn about Jinja2 templates which will help us 
-render our data from back end to the front end and vice versa. 
+Main Goal:For the next sprint we have to complete our basic requirements for our HTML pages such as, all the textboxes or labels
+that we need should be in place. Some of the HTML pages such as BUY and SELL should also be ready and designed completly. We are
+plannign to add all the necessary javascript to our files as our back end requires us to do.
+
+Back End Final Sprint:
+(Steven Hernandez and Salvador Romero)
+Main Goal: Finish routing all of the pages together. 
+Set up sessions so that we can keep track of users information during 
+the time they have logged in.
+
+Database Final Sprint:
+(Moiz Ahmed & Aadil Khatri)
+Main Goal: the Database team will assess and understand any and all additional requirements/features and develop the database with all the required data structures. Also, we need to design a more robust database schema after consulting with back-end. After all that, we need to make it connect to back-end smoothly with out any problems.
+
+Implementing SOLID principles:
+(discussion between team members)
+
+Backend:
+There is a way to devide the file containing the implementation of the backend into seperate files. We decided to keep everything in a single file since there is not much code needed to connect the backend with the front end. Once we add more to the file then we will need to revisit the question on how to devide the file. 
+
+Front end:
+For the front end we devided each page in our website into a different file.
+
+
 
 	

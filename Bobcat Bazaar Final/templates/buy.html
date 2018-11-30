@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sell</title>
+    <title>Buy</title>
 <style>
     input[type=text]{
 	    width:45%;
@@ -54,13 +54,12 @@
 		border: solid 2px maroon;
 		background-color: white;
 		border-radius: 50px;
-		padding: 10px 50px;	
+		padding: 10px 50px;
 	}
 	button:hover{
 	    background-color: maroon;
 		color:#fff;
 	}
-
 	body {
     margin: 0;
 }
@@ -97,35 +96,49 @@ li a:hover:not(.active) {
 <body>
 
 	<div>
-		<h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:40px; margin:0;">Bobcat Book Bazaar</h1>
+		<h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:40px;margin:0;">Bobcat Book Bazaar</h1>
 		<ul style="padding-top:10px;">
 			<li><a class="active" href="#home">Home</a></li>
-			<li><a href="buy.html">Buy</a></li>
-			<li><a href="sell.html">Sell</a></li>
-			<li><a href="profile.html">Manage Profile</a></li>
-			<li><a href="messages.html">Visit Messages</a></li>
-			<li><a href="login1.html">Logout</a></li>
+			<li><a href="{{ url_for('buy') }}">Buy</a></li>
+			<li><a href="{{ url_for('sell') }}">Sell</a></li>
+			<li><a href="{{ url_for('profile') }}">Manage Profile</a></li>
+			<li><a href="{{ url_for('messages') }}">Visit Messages</a></li>
+			<li><a href="{{ url_for('logout') }}">Logout</a></li>
 		</ul>
 	</div>
 	<div style="margin-left:400px; margin-top:20px;">
 		<div style="margin-left:50px; margin-top:25px;">
-		    <b>Please fill out the following information for this post:</b><br><br>
-			<b>Book name:</b> 
-			<br><input type="text" name="BookName" placeholder="Book Name" Required><br><br>
-			<b>Book Description:</b> 
-			<br><textarea placeholder="Enter book description"></textarea><br><br>
-			<b>Book Price:</b> 
-			<br><input type="text" name="Price" placeholder="Price" Required><br><br>
-			<b>College:</b><br>
+		    <b>What would you like to buy today</b><br><br>
+            <b>College:</b><br>
+            <select name="my_html_select_box">
+				<option>Applied Arts</option>
+				<option>McCoy College of Business Administration</option>
+				<option>Education</option>
+				<option>Fine Arts and Communication</option>
+                <option>Health Professions</option>
+                <option>Liberal Arts</option>
+                <option>Science and Engineering</option>
+                <option>University College</option>
+                <option>Graduate College</option>
+			</select>
+            <br>
+            <b>Select Department:</b><br>
 			<select name="my_html_select_box">
 				<option>Computer Science </option>
 				<option>MIS</option>
 				<option>Engineering</option>
 				<option>Mathematics</option>
 			</select>
-			<br><br>
-			<button>Post</button>
+			<br><b>Book name:</b>
+			<br><input type="text" name="BookName" placeholder="Title" Required><br>
+            <b>Course Id:</b>
+			<br><input type="text" name="CourseId" placeholder="CourseId" Required><br><br>
+			<button>Search</button>
 		</div>
 	</div>
+
+
+    <br><br>
+
 </body>
 </html>

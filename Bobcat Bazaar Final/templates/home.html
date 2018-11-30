@@ -45,15 +45,20 @@ li a:hover:not(.active) {
     <h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:40px; margin:0;">Bobcat Book Bazaar</h1>
 	<ul style="padding-top:10px;">
 	  <li><a class="active" href="#home">Home</a></li>
-	  <li><a href="buy.html">Buy</a></li>
-	  <li><a href="sell.html">Sell</a></li>
-	  <li><a href="profile.html">Manage Profile</a></li>
-	  <li><a href="messages.html">Visit Messages</a></li>
-	  <li><a href="login1.html">Logout</a></li>
+	  <li><a href="{{ url_for('buy') }}">Buy</a></li>
+	  <li><a href="{{ url_for('sell') }}">Sell</a></li>
+	  <li><a href="{{ url_for('profile') }}">Manage Profile</a></li>
+	  <li><a href="{{ url_for('messages') }}">Visit Messages</a></li>
+      <li><a href="{{ url_for('logout') }}">Logout</a></li>
 	</ul>
-	<div style="margin-left:4%;padding:1px 16px;height:100px;">
-		<h2 style="text-align:center;"> <b>Welcome to Bobcat Book Bazaar!</b></h2>
-	</div>
+    <div style="margin-left:4%;padding:1px 16px;height:100px;">
+        {% if uname %}
+           <h2 style="text-align:center;"> <b>Welcome, {{ uname }}, to Bobcat Book Bazaar!</b></h2>
+        {% else %}
+             <h2 style="text-align:center;"> <b>Welcome to Bobcat Book Bazaar!</b></h2>
+        {% endif %}
+    </div>
+
 	<div style="margin-left:250px;">
 	    <p>This is the Home Page</p>
 		<p>More Info will be coming soon, site in under construction.</p>

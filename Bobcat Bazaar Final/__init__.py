@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash, g, 
 from flask_pymongo import PyMongo
 import bcrypt
 
-#changes
 app = Flask(__name__, instance_relative_config=True)
 app.config['MONGO DBNAME'] = 'bobcatbaazar'
 app.config['MONGO_URI'] = 'mongodb://bobcat:bobcat2018@ds127843.mlab.com:27843/bobcatbaazar'
@@ -28,22 +27,19 @@ def index():
 @app.route('/home/<username>')
 def home(username):
     if 'username' in session:
-        username = session['username']
         return render_template('home.html', uname=username)
-    return "You are not logged in <br><a href='/'></b>" + \
-            "click here to log in</b></a>"
+    return redirect(url_for('index'))
 
 @app.route('/buy')
 def buy():
     if 'username' in session:
         username = session['username']
         return render_template('buy.html')
-    return "You are not logged in <br><a href='/'></b>" + \
-           "click here to log in</b></a>"
+    return redirect(url_for('index'))
 
 @app.route('/sell',  methods=['POST','GET'])
 def sell():
-    if request.method == 'POST':
+    if request.method == 'POST' and 'username' in session:
         Sell_Book = mongo.db.Sell_Books
         college = request.form['college']
         department = request.form['department']
@@ -54,6 +50,8 @@ def sell():
         netid = session['username']
         Sell_Book.insert({'NetId': netid, 'College': college, 'Department': department, 'Book Name': b_name, 'Course_ID': course_id, 'Pay_Type': pay_method, 'Price': price})
         return redirect(url_for('sell'))
+    elif 'username' not in session:
+        return redirect(url_for('index'))
     return render_template('sell.html')
 
 @app.route('/profile')
@@ -61,16 +59,14 @@ def profile():
     if 'username' in session:
         username = session['username']
         return render_template('profile.html')
-    return "You are not logged in <br><a href='/'></b>" + \
-           "click here to log in</b></a>"
+    return redirect(url_for('index'))
 
 @app.route('/messages')
 def messages():
     if 'username' in session:
         username = session['username']
         return render_template('messages.html')
-    return "You are not logged in <br><a href='/'></b>" + \
-           "click here to log in</b></a>"
+    return redirect(url_for('index'))
 
 @app.route('/logout')
 def logout():

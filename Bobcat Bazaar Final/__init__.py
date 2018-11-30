@@ -84,6 +84,10 @@ def register():
         existing_users = user.find_one({'NetId': request.form['netid']})
         if existing_users is None:
             password = request.form['password']
+            confirm_password = request.form['confirm_password']
+            if confirm_password != password:
+                error = 'Password must match'
+                return render_template('register.html', error=error)
             fname = request.form['Fname']
             lname = request.form['Lname']
             netid = request.form['netid']

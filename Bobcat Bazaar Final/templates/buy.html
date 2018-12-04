@@ -176,6 +176,10 @@ li a:hover:not(.active) {
 				<button>Search</button>
 			</form>
 		</div>
+
+        {% for book in results %}
+            {{ book['Book Name'] }} {{ book['Course_ID'] }} {{ book['Pay_Type'] }} {{ book['Price'] }}<br>
+        {% endfor %}
 	</div>
 
 

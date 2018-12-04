@@ -30,12 +30,19 @@ def home(username):
         return render_template('home.html', uname=username)
     return redirect(url_for('index'))
 
-@app.route('/buy')
+@app.route('/buy', methods=['POST','GET'])
 def buy():
-    if 'username' in session:
+    if request.method == 'POST' and 'username' in session:
         username = session['username']
-        return render_template('buy.html')
-    return redirect(url_for('index'))
+        college = request.form['college']
+        department = request.form['department']
+        courseId = request.form['CourseId']
+        books = mongo.db.Sell_Books
+        results = list(books.find( {'$and':[{'College': college}, {'Department': department}, {'Course_ID': courseId}]}))
+        return render_template('buy.html', results=results)
+    elif 'username' not in session:
+        return redirect(url_for('index'))
+    return render_template('buy.html')
 
 @app.route('/sell',  methods=['POST','GET'])
 def sell():

@@ -191,10 +191,6 @@ tr:nth-child(even) {
 				<button>Search</button>
 			</form>
 		</div>
-
-        {% for book in results %}
-            {{ book['Book Name'] }} {{ book['Course_ID'] }} {{ book['Pay_Type'] }} {{ book['Price'] }}<br>
-        {% endfor %}
 		
 		<div id="show"></div>
     <div id="sbh" style="visibility: hidden">
@@ -206,31 +202,13 @@ tr:nth-child(even) {
                     <th>CourseId</th>
                     <th>Department</th>
                   </tr>
-                  <tr>
-                    <td>Linear Algebra</td>
-                    <td>3337</td>
-                    <td>Mathematics</td>
-                  </tr>
-                  <tr>
-                    <td>Intro to Operating Systems</td>
-                    <td>3399</td>
-                    <td>Computer Science</td>
-                  </tr>
-                  <tr>
-                    <td>Discrete Math</td>
-                    <td>3390</td>
-                    <td>Mathematics</td>
-                  </tr>
-                  <tr>
-                    <td>Intro to Software Engineering</td>
-                    <td>3398</td>
-                    <td>Computer Science</td>
-                  </tr>
-                  <tr>
-                    <td>Probability and Stat</td>
-                    <td>3305</td>
-                    <td>Mathematics</td>
-                  </tr>
+				  {% for book in results %}
+				     <tr>
+						 <td>{{ book['Book Name'] }}</td>
+						 <td>{{ book['Course_ID'] }}</td>
+						 <td>{{ book['Department'] }}</td>
+					 </tr>
+				  {% endfor %}
             </table>
         </div>
     </div>

@@ -155,24 +155,26 @@ li a:hover:not(.active) {
 	<div style="margin-left:400px; margin-top:20px;">
 		<div style="margin-left:50px; margin-top:25px;">
 		    <b>What would you like to buy today</b><br><br>
-            <b>College:</b><br>
-            <select id="college" name="college" onchange="populate(this.id,'department')">
-                <option value="Applied Arts">Applied Arts</option>
-                <option value="McCoy College of Business Administration">McCoy College of Business Administration</option>
-                <option value="Education">Education</option>
-                <option value="Fine Arts and Communication">Fine Arts and Communication</option>
-                <option value="Health Professions">Health Professions</option>
-                <option value="Liberal Arts">Liberal Arts</option>
-                <option value="Science and Engineering">Science and Engineering</option>
-			</select>
-            <br>
-            <b>Select Department:</b><br>
-                <select id="department" name="department"></select>
-			<br><b>Book name:</b>
-			<br><input type="text" name="BookName" placeholder="Title" Required><br>
-            <b>Course Id:</b>
-			<br><input type="text" name="CourseId" placeholder="CourseId" Required><br><br>
-			<button>Search</button>
+			<form method="Post" action="/buy">
+				<b>College:</b><br>
+				<select id="college" name="college" onchange="populate(this.id,'department')">
+					<option value="Applied Arts">Applied Arts</option>
+					<option value="McCoy College of Business Administration">McCoy College of Business Administration</option>
+					<option value="Education">Education</option>
+					<option value="Fine Arts and Communication">Fine Arts and Communication</option>
+					<option value="Health Professions">Health Professions</option>
+					<option value="Liberal Arts">Liberal Arts</option>
+					<option value="Science and Engineering">Science and Engineering</option>
+				</select>
+				<br>
+				<b>Select Department:</b><br>
+					<select id="department" name="department"></select>
+				<br><b>Book name:</b>
+				<br><input type="text" name="BookName" placeholder="Title" Required><br>
+				<b>Course Id:</b>
+				<br><input type="text" name="CourseId" placeholder="CourseId" Required><br><br>
+				<button>Search</button>
+			</form>
 		</div>
 	</div>
 

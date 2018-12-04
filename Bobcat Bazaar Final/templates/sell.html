@@ -93,6 +93,52 @@ li a:hover:not(.active) {
     color: white;
 }
 </style>
+<script type="text/javascript">
+    function populate(s1,s2){
+        var s1 = document.getElementById(s1);
+        var s2 = document.getElementById(s2);
+        s2.innerHTML = "";
+        if(s1.value == "Science and Engineering"){
+            var optionArray =["computer science|Computer Science","biology|Biology",
+                "chemistry & biochemistry|Chemistry & Biochemistry","engineering technology|Engineering Technology",
+                "mathematics|Mathematics","physics|Physics"];
+        }
+        else if (s1.value == "Applied Arts"){
+            var optionArray =["aerospace studies|Aerospace Studies","agriculture|Agriculture",
+                "criminal justice|Criminal Justice","family & consumer science|Family & Consumer Science",
+                "military science|Military Science","social work|Social Work",
+                "occupational, workforce and leadership studies|Occupational, Workforce and Leadership Studies"];
+        }
+        else if (s1.value == "McCoy College of Business Administration"){
+            var optionArray =["school of business|School of Business"];
+        }
+        else if (s1.value == "Education"){
+            var optionArray=["curriculum and instruction| Curriculum And Instruction",
+                "health and human performance|Health and Human Performance",
+                "counseling,leadership,adult education and school psychology|" +
+                "Counseling,Leadership,Adult Education and School Psychology"];
+        }
+        else if (s1.value == "Fine Arts and Communication"){
+            var optionArray =["fine arts and communication|Fine Arts and Communication"];
+        }
+        else if(s1.value == "Health Professions"){
+            var optionArray =["physical therapy|Physical Therapy","radiation therapy|Radiation Therapy",
+                "respiratory care|Respiratory Care","health information management|Health Information Management"];
+        }
+        else if(s1.value == "Liberal Arts"){
+            var optionArray =["anthropology|Anthropology","english|English","geography|Geography","history|History",
+                "modern language|Modern Language","philosophy|Philosophy","political science|Political Science",
+                "psychology|Psychology","sociology|Sociology"];
+        }
+        for(var option in optionArray){
+            var pair = optionArray[option].split("|");
+            var newOption = document.createElement("option");
+            newOption.value = pair[0];
+            newOption.innerHTML = pair[1];
+            s2.options.add(newOption);
+        }
+    }
+</script>
 </head>
 <body>
 
@@ -112,25 +158,18 @@ li a:hover:not(.active) {
 		    <b>Please fill out the following information for this post:</b><br><br>
             <form method="Post" action="/sell">
                 <b>College:</b><br>
-                <select name="college">
-                    <option>Applied Arts</option>
-                    <option>McCoy College of Business Administration</option>
-                    <option>Education</option>
-                    <option>Fine Arts and Communication</option>
-                    <option>Health Professions</option>
-                    <option>Liberal Arts</option>
-                    <option>Science and Engineering</option>
-                    <option>University College</option>
-                    <option>Graduate College</option>
+                <select id="college" name="college" onchange="populate(this.id,'department')">
+                    <option value="Applied Arts">Applied Arts</option>
+                    <option value="McCoy College of Business Administration">McCoy College of Business Administration</option>
+                    <option value="Education">Education</option>
+                    <option value="Fine Arts and Communication">Fine Arts and Communication</option>
+                    <option value="Health Professions">Health Professions</option>
+                    <option value="Liberal Arts">Liberal Arts</option>
+                    <option value="Science and Engineering">Science and Engineering</option>
                 </select>
                 <br>
-                <b>Select Department:</b><br>
-                <select name="department">
-                    <option>Computer Science </option>
-                    <option>MIS</option>
-                    <option>Engineering</option>
-                    <option>Mathematics</option>
-                </select>
+                <b>Select Department or School:</b><br>
+                <select name="department"></select>
                 <br><b>Book name:</b>
                 <br><input type="text" name="BookName" placeholder="Book Name" Required><br>
                 <b>Course Id:</b>

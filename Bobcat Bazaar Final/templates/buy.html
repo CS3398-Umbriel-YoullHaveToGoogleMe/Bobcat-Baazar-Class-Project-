@@ -154,7 +154,7 @@ tr:nth-child(even) {
     }
 </script>
 </head>
-<body>
+<body onload="toshow()">
 
 	<div>
 		<h1 style="text-align: center; color:goldenrod;background-color:maroon;padding:40px;margin:0;">Bobcat Book Bazaar</h1>
@@ -241,3 +241,10 @@ tr:nth-child(even) {
 
 </body>
 </html>
+<script>
+    function toshow(){
+        if (document.getElementById('hide') != null){
+            document.getElementById('show').innerHTML = document.getElementById('sbh').innerHTML;
+        }
+    }
+</script>

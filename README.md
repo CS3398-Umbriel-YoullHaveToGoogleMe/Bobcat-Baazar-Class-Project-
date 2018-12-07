@@ -44,7 +44,7 @@ the results if there are any with a book name, college, department, Course ID, f
 - My code/artifact file that this readme is referring to could be found on the master branch, it is a text file which is named 
 Reference_code_for_readme_Aadil_Khatri_.txt. This file contains code that is used in our sell.html page and buy.html page. 
 This This is used at buying, selling and searching for a book.
--For the measurable improvements, in sprint 2 I was kind of behind in handling the ZenHub board and not being able to move the tasks at
+- For the measurable improvements, in sprint 2 I was kind of behind in handling the ZenHub board and not being able to move the tasks at
 the right time. Also in sprint 2, I wasn't able to commuicate effectively with the backend as I should have. But in sprint 3 I was able
 sit down with the backend and talk effectively about how the database is going to work and what the tables are going to be used for. 
 In sprint 3 I was able to keep up with the tasks on ZenHub. In previous sprints there were some errors that I made while I was making 

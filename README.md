@@ -20,6 +20,20 @@ To view the HTML files created. Navigate to "HTML files" folder
 To view the database files of our applictiion.
 Navigate to Bobcat_Bazaar/flaskr/BobcatBazaar1.sql
 
+
+Sprint 3:
+
+  Nabil Manasiya :
+- I created the table on the sell page that works as a results table from the user search for a book. 
+  The idea behind the results table was to present users with a simple yet organized way to see their output of books. 
+  There was a part were my team mate steven hernandez helped me in organizing the data within the tables.
+- I also worked on adding logic to the drop down menus on buy and sell page. In our previous sprint we had our drop downs
+  present us with fields that were same for all of the colleges and departments, but this time i made the department drop
+  down depend on the college drop down making it change according to the user’s selection of college.
+- My code/artifact file that this readme is refering to could be found on the master brance, it is a text file which is named
+  Reference_code_for_README_NABIL_MANASIYA.txt. This file contains code that is used in our sell.html page and buy.html page.
+  This code is one of the many key features that we have in our project.
+
 	
 Back End Next Sprint:
 (Steven Hernandez and Salvador Romero)

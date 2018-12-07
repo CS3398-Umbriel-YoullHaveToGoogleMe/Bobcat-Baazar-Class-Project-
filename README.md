@@ -32,11 +32,11 @@ Learning how to replace the stock html pages
 that the Flask tutorial provided with our own 
 html pages.
 
-Front End Next Sprint:
+Front End Sprint 3 retropsective:
 (Nabil Manasiya and Matt Stephens)
-Main Goal:For the next sprint we have to complete our basic requirements for our HTML pages such as, all the textboxes or labels
-that we need should be in place. Some of the HTML pages such as BUY and SELL should also be ready and designed completly. We are
-plannign to add all the necessary javascript to our files as our back end requires us to do.
+Nabil: Created the menu on the buy and sell pages. Deigned and implemented the login pages. (In the buy.html, sell.html, login1.html)
+Matthew: Created site design and navigation. (added to all html files except the login1 file)
+	For this sprint I checked in with my team on slack and met with nabil and the rest of the team after class mmore often than last 	sprint. I still should've been more actively communicating with my team.
 
 Back End Final Sprint:
 (Steven Hernandez and Salvador Romero)

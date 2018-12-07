@@ -14,7 +14,7 @@ How to run Bobcat Bazaar Class Project.
 	From here you will be presented with our home page. To use the site you will need to register with a username and password of your choosing. To post book into the site go to the sell tab and fill out all the informatino for the book. To buy a book, go to buy tab and fill out the information for the book you are looking for. 
 
 
-To veiw the front end of the application.
+To view the front end of the application.
 To view the HTML files created. Navigate to "HTML files" folder
 
 To view the database files of our applictiion.

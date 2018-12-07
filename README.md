@@ -51,6 +51,10 @@ This This is used at buying, selling and searching for a book.
 - I added a few lines of code to the register function in __init__.py to implement a confirm password field on the register page. (Line 90 - 93 of __init__.py)
 - I added a few lines to register.html to add the confirm password field. (Lines 61 - 65 of register.html)
 - I added a few lines to buy.html to add the results of the search query into the table that Nabil designed. (Lines 205 - 211 of buy.html)
+- My code/artifact file that this readme is refering to could be found on the master brance, it is a text file which is named
+  Reference_code_for_README_STEVEN_HERNANDEZ.txt. This file contains code that is used in our buy.html page and our back-end file __init__.py.
+- For this sprint, I was able to improve how I handled the ZenHub board.  This time around I had the correct amount of hours assigned to myself.  I regularly looked at the board to make sure that it was an accurate representation of where I stood at that time.  I also did my best to make sure that it also accurately represented what my teammates were working on at the time.  You can see evidence of this by looking at what tasks were moved to the done column and what tasks remained in the In Progress column.  Everything in the done column can be found implemented or taken care of in our code.  Anything that remained in the In Progress column were really things that never got finished or implemented.
+
 
 	
 Back End Next Sprint:

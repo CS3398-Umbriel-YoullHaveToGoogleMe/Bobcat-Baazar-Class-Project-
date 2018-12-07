@@ -34,7 +34,7 @@ Sprint 3:
   Reference_code_for_README_NABIL_MANASIYA.txt. This file contains code that is used in our sell.html page and buy.html page.
   This code is one of the many key features that we have in our project.
   
-  Aadil Khatri:
+ Aadil Khatri:
 - I created a table/data for books in MongoDb, that works as a user wants to sell a book, that book will be stored in to the 
 database table called Sell_Books. Also, if a user wants to buy a book and wants to search for a book, he/she will be able to get 
 the results if there are any with a book name, college, department, Course ID, for the book through the database.

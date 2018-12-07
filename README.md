@@ -1,4 +1,4 @@
-HOW TO RUN THE APPLICATION:
+﻿HOW TO RUN THE APPLICATION:
 Also have to have python 3.6 installed to run this.
 Before running the application make sure to have Flask,Flask_pymongo, and Bycrypt installed.
 
@@ -44,6 +44,12 @@ the results if there are any with a book name, college, department, Course ID, f
 - My code/artifact file that this readme is referring to could be found on the master branch, it is a text file which is named 
 Reference_code_for_readme_Aadil_Khatri_.txt. This file contains code that is used in our sell.html page and buy.html page. 
 This This is used at buying, selling and searching for a book.
+-For the measurable improvements, in sprint 2 I was kind of behind in handling the ZenHub board and not being able to move the tasks at
+the right time. Also in sprint 2, I wasn't able to commuicate effectively with the backend as I should have. But in sprint 3 I was able
+sit down with the backend and talk effectively about how the database is going to work and what the tables are going to be used for. 
+In sprint 3 I was able to keep up with the tasks on ZenHub. In previous sprints there were some errors that I made while I was making 
+the user table, but in this sprint I made sure not to make those errors on the book table hence I have improved on that part as you can 
+see the code and the working program.
 
  Steven Hernandez:
 - I added code to utilize user sessions in flask in order to prevent users of the website from accessing certain pages without being logged in first. This code can be seen in all of the methods in __init__.py except for the index and register methods since those pages do not require login.

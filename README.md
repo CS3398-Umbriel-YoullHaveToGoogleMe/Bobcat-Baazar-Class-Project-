@@ -60,6 +60,9 @@ see the code and the working program.
 - My code/artifact file that this readme is refering to could be found on the master brance, it is a text file which is named
   Reference_code_for_README_STEVEN_HERNANDEZ.txt. This file contains code that is used in our buy.html page and our back-end file __init__.py.
 - For this sprint, I was able to improve how I handled the ZenHub board.  This time around I had the correct amount of hours assigned to myself.  I regularly looked at the board to make sure that it was an accurate representation of where I stood at that time.  I also did my best to make sure that it also accurately represented what my teammates were working on at the time.  You can see evidence of this by looking at what tasks were moved to the done column and what tasks remained in the In Progress column.  Everything in the done column can be found implemented or taken care of in our code.  Anything that remained in the In Progress column were really things that never got finished or implemented.
+Salvador Romero: 
+-I did research on how to implement sessions in the flask web framework. The actual implemintation of the sessions was done by Steven. 
+-I also did reasearch on user email authentication. This would allow us to make the Bobcat Bazaar  only for Texas State students. At registration the user would be sent an email confirmation with a unique email sent to them. We would have to hardcode the email registration so that the domain would have to end with @txstate.edu. The student would have to confirm their email by clicking the link. Once they have clicked the link in the email their status would be set to confirmed. Now they will be able to sucessfuly log in. I was not able to implement this within our final sprint. 
 
 
 	

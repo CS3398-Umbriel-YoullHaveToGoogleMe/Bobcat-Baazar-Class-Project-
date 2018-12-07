@@ -45,6 +45,12 @@ the results if there are any with a book name, college, department, Course ID, f
 Reference_code_for_readme_Aadil_Khatri_.txt. This file contains code that is used in our sell.html page and buy.html page. 
 This This is used at buying, selling and searching for a book.
 
+ Steven Hernandez:
+- I added code to utilize user sessions in flask in order to prevent users of the website from accessing certain pages without being logged in first. This code can be seen in all of the methods in __init__.py except for the index and register methods since those pages do not require login.
+- I added code to the buy method in __init__.py to take the search terms entered by the user in the buy.html page and query the database for all books that match those search terms.  Once that list is compiled, that list is then returned back to the html page for displaying the results to the user. (Lines 36 - 42 of __init__.py)
+- I added a few lines of code to the register function in __init__.py to implement a confirm password field on the register page. (Line 90 - 93 of __init__.py)
+- I added a few lines to register.html to add the confirm password field. (Lines 61 - 65 of register.html)
+- I added a few lines to buy.html to add the results of the search query into the table that Nabil designed. (Lines 205 - 211 of buy.html)
 
 	
 Back End Next Sprint:

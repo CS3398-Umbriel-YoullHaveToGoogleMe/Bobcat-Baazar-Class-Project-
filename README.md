@@ -1,4 +1,4 @@
-﻿HOW TO RUN THE APPLICATION:
+HOW TO RUN THE APPLICATION:
 Also have to have python 3.6 installed to run this.
 Before running the application make sure to have Flask,Flask_pymongo, and Bycrypt installed.
 
@@ -33,6 +33,9 @@ Sprint 3:
 - My code/artifact file that this readme is refering to could be found on the master brance, it is a text file which is named
   Reference_code_for_README_NABIL_MANASIYA.txt. This file contains code that is used in our sell.html page and buy.html page.
   This code is one of the many key features that we have in our project.
+- As far as measurable improvements are concerned, in sprint 2 i implemented the drop downs but they were without the logic and
+  not so very well designed, but in sprint 3 i made a significant improvement and made progress on it. You can see how the drop
+  down looks now.
   
  Aadil Khatri:
 - I created a table/data for books in MongoDb, that works as a user wants to sell a book, that book will be stored in to the 
